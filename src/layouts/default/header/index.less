@@ -1,0 +1,93 @@
+@header-prefix-cls: ~'@{namespace}-layout-header';
+@header-trigger-prefix-cls: ~'@{namespace}-layout-header-trigger';
+
+.@{header-prefix-cls} {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  height: @header-height;
+  line-height: @header-height;
+  // color: @white;
+  background-color: @white;
+
+  &-logo {
+    height: @header-height;
+    min-width: 192px;
+    padding: 0 10px;
+    font-size: 14px;
+
+    img {
+      width: @logo-width;
+      height: @logo-width;
+      margin-right: 2px;
+    }
+  }
+
+  &-left {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .@{header-trigger-prefix-cls} {
+      display: flex;
+      height: 100%;
+      padding: 1px 10px 0;
+      cursor: pointer;
+      align-items: center;
+
+      &.light {
+        &:hover {
+          background-color: @header-light-bg-hover-color;
+        }
+
+        svg {
+          fill: #000;
+        }
+      }
+    }
+  }
+
+  &-action {
+    display: flex;
+    min-width: 180px;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__item {
+      display: flex;
+      height: @header-height;
+      padding: 0 2px;
+      font-size: 1.2em;
+      cursor: pointer;
+      align-items: center;
+
+      .app-iconify {
+        padding: 0 10px;
+        font-size: 16px !important;
+      }
+    }
+  }
+
+  &-menu {
+    flex: 1;
+  }
+
+  &--light {
+    .@{header-prefix-cls} {
+      background-color: @white !important;
+      border-bottom: 1px solid @header-light-bottom-border-color;
+      border-left: 1px solid @header-light-bottom-border-color;
+    }
+
+    .@{header-prefix-cls}-action {
+      &__item {
+        color: #444;
+
+        &:hover {
+          background-color: @header-light-bg-hover-color;
+        }
+      }
+    }
+  }
+}

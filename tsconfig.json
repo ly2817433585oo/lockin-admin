@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "noLib": false,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入。这并不影响代码的输出，仅为了类型检查。
+    "strictFunctionTypes": false, // 禁止函数双向协变检查
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "allowJs": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "esnext"],
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "types": ["vite/client"],
+    "removeComments": true,
+    "paths": {
+      "@/*": ["src/*"],
+      "#/*": ["types/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "vite.config.ts",
+    "mock/**/*.ts"
+  ],
+  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"]
+  // "references": [{ "path": "./tsconfig.node.json" }]
+}
